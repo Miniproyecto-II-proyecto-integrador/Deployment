@@ -1,8 +1,8 @@
 # Despliegue y ejecución con Docker
 
-El proyecto contiene tres servicios independientes. El `docker-compose.yml` de
-la raíz permite ejecutarlos juntos localmente; cada backend conserva su propio
-Dockerfile y sus propias variables de entorno.
+El proyecto contiene tres servicios independientes. El archivo
+`Deployment/docker-compose.yml` permite ejecutarlos juntos localmente; cada
+backend conserva su propio Dockerfile y sus propias variables de entorno.
 
 ## Requisitos
 
@@ -43,8 +43,8 @@ servicio.
 Valida la configuración y levanta los servicios:
 
 ```bash
-docker compose config -q
-docker compose up --build
+docker compose -f Deployment/docker-compose.yml config -q
+docker compose -f Deployment/docker-compose.yml up --build
 ```
 
 Abre <http://localhost:5173>. La API está en <http://localhost:3000>, su
@@ -56,7 +56,7 @@ El navegador usa los puertos publicados en `localhost`, no los nombres DNS
 internos de Compose. Para detener los servicios:
 
 ```bash
-docker compose down
+docker compose -f Deployment/docker-compose.yml down
 ```
 
 ## Desplegar `backend-api` en Render

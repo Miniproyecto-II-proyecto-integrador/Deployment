@@ -1,27 +1,27 @@
 services:
   backend-api:
     build:
-      context: ./backend-api
+      context: ../backend-api
       dockerfile: Dockerfile
     env_file:
-      - ./backend-api/.env
+      - ../backend-api/.env
     ports:
       - "3000:3000"
     restart: unless-stopped
 
   backend-realtime:
     build:
-      context: ./backend-realtime
+      context: ../backend-realtime
       dockerfile: Dockerfile
     env_file:
-      - ./backend-realtime/.env
+      - ../backend-realtime/.env
     ports:
       - "3001:3001"
     restart: unless-stopped
 
   frontend:
     build:
-      context: ./frontend
+      context: ../frontend
       dockerfile: Dockerfile
     ports:
       - "5173:80"
