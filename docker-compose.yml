@@ -5,6 +5,8 @@ services:
       dockerfile: Dockerfile
     env_file:
       - ../backend-api/.env
+    environment:
+      PORT: "3000"
     ports:
       - "3000:3000"
     restart: unless-stopped
@@ -15,6 +17,8 @@ services:
       dockerfile: Dockerfile
     env_file:
       - ../backend-realtime/.env
+    environment:
+      PORT: "3001"
     ports:
       - "3001:3001"
     restart: unless-stopped
